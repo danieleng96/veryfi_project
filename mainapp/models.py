@@ -32,15 +32,15 @@ class PersonalFinance(models.Model):
 
 
 #can add new expenses not in upload tag
-class Expenses(models.Model):
+# class Expenses(models.Model):
 
-    finances = models.OneToOneField(PersonalFinance, on_delete = models.CASCADE)
-    category = models.CharField(null = False, max_length = 100)
-    amount = models.FloatField(null = False)
-    expense_type = models.CharField(null = False, max_length = 1)
-    #create and effective time
-    create_time = models.DateTimeField(auto_now_add = True)
-    effective_time = models.DateTimeField(auto_now_add = True)
+#     finances = models.OneToOneField(PersonalFinance, on_delete = models.CASCADE)
+#     category = models.CharField(null = False, max_length = 100)
+#     amount = models.FloatField(null = False)
+#     expense_type = models.CharField(null = False, max_length = 1)
+#     #create and effective time
+#     create_time = models.DateTimeField(auto_now_add = True)
+#     effective_time = models.DateTimeField(auto_now_add = True)
 
 class Upload(models.Model):
 
