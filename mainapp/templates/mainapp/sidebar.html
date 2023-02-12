@@ -1,0 +1,48 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link href=”http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.4.3.min.css”
+      rel=”stylesheet” type=”text/css”>
+      <link rel="stylesheet", type = 'text/css' href="{%static 'mainapp\sidebar.css' %}">
+
+</head>
+<html>
+<body>
+    <div class="page-container">
+        <nav class="nav">
+            <div id="menu-title">Menu</div>
+            
+            <a href="{% url "upload" %}" class='nav__link'>
+            <div class="nav__icon-container">
+                <button class="btn"><i class="fa fa-upload"></i></button>
+            </div>
+            <span class="nav__label">Scan Document</span>
+            </a>
+            <a href="{% url "analysis" "all" %}" class='nav__link'>
+                <div class="nav__icon-container">
+                    <button class="btn"><i class="fa fa-pie-chart"></i></button>
+                </div>
+                <span class="nav__label">Analysis</span>
+            </a>
+            <a href="{% url "enter_finances" %}" class='nav__link'>
+                <div class="nav__icon-container">
+                    <button class="btn"><i class="fa fa-dollar"></i></button>
+                </div>
+                <span class="nav__label">Input Finances</span>
+            </a>
+
+            <a href="{% url "view_finances" %}" class='nav__link'>
+                <div class="nav__icon-container">
+                    <button class="btn"><i class="fa fa-money"></i></button>
+                </div>
+                <span class="nav__label">View Finances</span>
+            </a>    
+                       
+        </nav>
+
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>

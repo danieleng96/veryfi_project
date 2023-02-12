@@ -1,0 +1,15 @@
+{% extends "mainapp/sidebar.html" %}
+{% block content %}
+    <main>
+    <div id="form_div">
+
+    <h3>Enter Budget Information</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_table}}
+        <button type = "submit">Enter data</button>
+    </form>
+    <a href={% url "analysis" "all" %}><button>View analysis</button></a>
+    </div>
+</main>
+{% endblock %}

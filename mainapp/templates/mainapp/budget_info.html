@@ -1,0 +1,12 @@
+
+{% extends "mainapp/sidebar.html" %}
+{% block content %}
+<h3>Input Personal Information</h3>
+
+    <form action="/upload/" method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

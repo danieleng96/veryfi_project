@@ -1,0 +1,30 @@
+
+{% extends "mainapp/sidebar.html" %}
+{% block content %}
+    <main>
+    <h3 id="action">{{action}}</h3>
+   <table>
+    {% for col in columns %}
+    <th>{{col}}</th>
+    {% endfor %}
+    <tr>
+          {% for i in queryset %}
+          <tr>
+          <td>{{i.id}}</td>
+
+          <td>{{i.first_name}}</td>
+          <td>{{i.last_name}}</td>
+          <td>${{i.monthly_expenses}}</td>
+          <td>${{i.monthly_budget}}</td>
+          <td>${{i.annual_salary}}</td>
+          <td>{{i.state}}</td>
+          <td>{{i.tax_bracket}}%</td>
+          <td>{{i.create_time}}</td>
+          <td>{{i.update_time}}</td>
+          </tr>
+
+          {% endfor %}
+    </tr>
+</table>
+</main>
+{% endblock %}

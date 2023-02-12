@@ -1,0 +1,220 @@
+:root {
+    --nav-icon-width: 50px;
+    --nav-border-width: 15px;
+    --nav-box-width: 200px;
+}
+html,body {
+    height:100%;
+    margin: 0;
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, #adc4ea, #dcc1db);
+
+}
+
+#menu-title {
+    width:var(--nav-box-width);
+    height:var(--nav-icon-width);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 3pt;
+    font-size: x-large;
+    color: rgb(255, 237, 179);
+    background-image: linear-gradient(to left, rgba(211, 165, 212, 0.5), #c9f1ff);
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    text-align: center;
+}
+
+.page-container {
+    height: inherit;
+    display: flex;
+}
+.main {
+    height:inherit;
+    padding: 0;
+    padding-left:var(--nav-border-width);
+    overflow-y:  auto;
+    margin: 10pt
+}
+
+.nav {
+    width: var(--nav-box-width);
+    height: inherit;
+    position: relative;
+    transition: width 0.5s;
+    flex-shrink: 0;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.nav--collapsed {
+    width: var(--nav-icon-width);
+}
+
+.nav__link {
+    display:flex;
+    align-items:center;
+    color: rgba(10, 6, 19, 0.75);
+    text-decoration: none;
+    padding-left: 5pt;
+}
+.nav__link:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    padding-left: 5pt;
+}
+.nav__label {
+    padding-left: 5px;
+    font-family: sans-serif;
+
+
+}
+.btn:hover{
+    background-color:rgb(255, 255, 0);
+}
+.btn {
+    margin: 2px;
+    background-color: #47ceff;
+    border: 2pt solid rgb(12, 3, 31);
+    color: rgb(59, 41, 13);
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5pt;
+    width:var(--nav-icon-width)
+}
+
+table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 3pt solid rgb(12,3,31);
+    border-collapse: collapse;
+    
+}
+tr:nth-child(even) {
+    padding: 10px;
+    margin: 2px;
+    border: 2pt solid rgb(12,3,31);
+    background-color :#e2cddb;
+    border-color: black;
+    padding: 15px 32px;
+}
+tr:nth-child(odd){ 
+    padding: 10px;
+    margin: 2px;
+    border: 2pt solid rgb(12,3,31);
+    background-color :#8aafeb;
+    border-color: black;
+    padding: 15px 32px;
+}
+td{ 
+    padding: 10px;
+    margin: 2px;
+    font-size: medium;
+    border: 2pt solid rgb(12,3,31);
+    border-color: black;
+    padding: 15px;
+}
+tr:hover {
+    background-color: rgb(255, 254, 200);
+}
+
+td:hover {
+    font-weight: bolder;    
+    background-color: rgb(255, 179, 151);
+}
+
+td:nth-child(1){
+    background-color:#0e2953;
+    color:white
+}
+th{
+    background-color: #f2dd9d;
+    border: 2pt solid rgb(12,3,31);
+    padding: 10px;
+}
+th:nth-child(1){
+    background-color:#0e2953;
+    color: white;
+}
+image{
+    max-height:500px;
+    border: 3pt solid rgb(59, 41, 13);
+}
+
+/* input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  } */
+button:hover{
+    background-color:lightgoldenrodyellow;
+}
+button {
+    margin: 2px;
+    background-color: #c9f1ff;
+    border: 2pt solid rgb(12, 3, 31);
+    color: rgb(59, 41, 13);
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5pt; 
+}
+#form_div {
+
+    margin: 15pt;
+    width:100%;
+    padding-left:var(--nav-border-width);
+
+}
+.h3 {
+    text-transform: uppercase;
+    color: #00087c;
+    letter-spacing: 3px;
+    padding: 10pt;
+    margin: 15pt;
+    width:100%;
+  }
+.form {
+    
+    /* text-align: center; */
+    margin:15pt;
+    letter-spacing: 3px;
+    padding: 10pt;
+    width:100%;
+
+}
+
+.input {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #0e2953;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgb(149, 76, 180);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    line-break: initial;
+  }
+  
+/* fade out text */
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    75% {opacity: 1}
+    100% { opacity: 0; }
+  }
+
+#action{
+    color:rgb(2, 37, 68);
+    opacity:0;
+    animation-name: fadeOut;
+    animation-duration: 5s;
+}
+
+

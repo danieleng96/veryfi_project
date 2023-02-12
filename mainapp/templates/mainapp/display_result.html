@@ -1,0 +1,65 @@
+{% comment %} {% load static %}
+<head>
+
+    <link rel="stylesheet", type = 'text/css' href="{%static 'mainapp\style.css' %}">
+
+</head> {% endcomment %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link href=”http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.4.3.min.css”
+      rel=”stylesheet” type=”text/css”>
+      <link rel="stylesheet", type = 'text/css' href="{%static 'mainapp\sidebar.css' %}">
+
+</head>
+
+<body>
+    <div class="page-container">
+        <nav class="nav">
+            <div id="menu-title">Menu</div>
+            <a href="{% url "upload" %}" class='nav__link'>
+            <div class="nav__icon-container">
+                <button class="btn"><i class="fa fa-upload"></i></button>
+            </div>
+            <span class="nav__label">Scan Document</span>
+            </a>
+            <a href="{% url "analysis" "all" %}" class='nav__link'>
+                <div class="nav__icon-container">
+                    <button class="btn"><i class="fa fa-pie-chart"></i></button>
+                </div>
+                <span class="nav__label">Analysis</span>
+            </a>
+            <a href="{% url "enter_finances" %}" class='nav__link'>
+                <div class="nav__icon-container">
+                    <button class="btn"><i class="fa fa-dollar"></i></button>
+                </div>
+                <span class="nav__label">Finances</span>
+            </a>
+
+            
+            
+              {% comment %} <a href="{% url "analysis" "month" %}"><button>View this Month Data</button></a>
+                    
+              <a href="{% url "analysis" "year" %}"><button>View this Year Data</button></a>
+                    
+              <a href="{% url "analysis" "all" %}"><button>View all Data</button></a>
+                    <br>
+              <a href="{% url "upload" %}"><button>Enter additional document</button></a>
+              <a href="{% url "enter_finances" %}"><button>Enter Personal Finance Information</button></a> {% endcomment %}
+        </nav>
+   <h3>Current Document</h3>
+   <table border="1">
+    {% comment %} <tr><td border ="2", bgcolor = '#8aafeb' >Total<td border = "2", bgcolor = '#8aafeb'>Date<td border = "2", bgcolor = '#8aafeb'>Category</td></tr> {% endcomment %}
+    <th>Total</th><th>Date</th><th>Category</th>
+    <tr><td>${{total}}</td><td>{{date}}</td><td>{{category}}</td></tr>
+    
+</table>
+
+<a href="{% url "upload" %}"><button>Upload another document</button></a>
+<a href="{% url "analysis" "all" %}"><button>View total analysis</button></a>
+<a href="{% url "enter_finances" %}"><button>Enter Personal Finance</button></a>
+
+</body>
+
+

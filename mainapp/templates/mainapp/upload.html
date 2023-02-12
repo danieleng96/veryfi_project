@@ -1,0 +1,21 @@
+
+{% extends "mainapp/sidebar.html" %}
+{% block content %}
+
+<main>
+    <h1>Upload Document</h1>
+    <h3>Enter image or pdf expense for processing.</h3>
+    
+    {% if slug %}
+        <a href="{% url 'display' slug %}"><button> Continue to document summary </button></a>
+        <br>
+        <img src="{{saved_object.image.url}}" alt="image" style = "max-height:500px">
+    {% else %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type = "submit">Upload Image</button>
+    </form>
+    {% endif %}
+</main>
+{% endblock %}

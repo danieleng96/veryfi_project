@@ -1,0 +1,41 @@
+{% extends "mainapp/sidebar.html" %}
+{% block content %}
+            <main class="main">
+                  <h1>Total Cost Amount by Category ({{scale}})</h1>
+                  {{div| safe}}
+
+                  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js"></script>
+                  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.3.min.js"></script>
+                  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.3.min.js"></script>
+                  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-api-2.4.3.min.js"></script>
+                  {{script| safe}}
+
+                  <br>
+                  <table>
+                        <th>Category</th>{% for i in number_values.cats %}
+                        <th>{{i}}</th>
+                        {% endfor %}
+                        <tr>
+                        <td>Number of Entries</td>
+                              {% for j in number_values.val %}
+                              <td>{{j}}</td>
+                              {% endfor %}
+                        </tr>
+                        <tr><td>Total Cost</td>
+                              {% for k in number_values.tot %}
+                              <td>${{k}}</td>
+                              {% endfor %}
+                        </tr>
+                  </table>
+            
+                  <a href="{% url "analysis" "month" %}"><button>View this Month Data</button></a>
+                    
+              <a href="{% url "analysis" "year" %}"><button>View this Year Data</button></a>
+                    
+              <a href="{% url "analysis" "all" %}"><button>View all Data</button></a>
+                    <br>
+              <a href="{% url "upload" %}"><button>Enter additional document</button></a>
+              <a href="{% url "enter_finances" %}"><button>Enter Personal Finance Information</button></a>
+
+            </main>
+{% endblock %}
